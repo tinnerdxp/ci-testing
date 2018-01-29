@@ -56,26 +56,26 @@ jobs:
       - run: echo "deploying master branch"
       - run: ssh -v $DROPLET_USER@$DROPLET_IP "cd /srv; ./circle_deployer.sh"
 
-  workflows:
-    version: 2
-    build_test_and_deploy:
-      jobs:
-        - build
-        - run_unit_tests:
-          requires:
-            - build
-        - run_functional_tests:
-          requires:
-            - build
-        - run_acceptance_tests:
-          requires:
-            - build
-        - hold:
-          type: approval
-          requires:
-            - run_unit_tests
-            - run_functional_tests
-            - run_acceptance_tests
-        - deployment:
-          requires:
-            - hold
+workflows:
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build
+      - run_unit_tests:
+        requires:
+          - build
+      - run_functional_tests:
+        requires:
+          - build
+      - run_acceptance_tests:
+        requires:
+          - build
+      - hold:
+        type: approval
+        requires:
+          - run_unit_tests
+          - run_functional_tests
+          - run_acceptance_tests
+      - deployment:
+        requires:
+          - hold
