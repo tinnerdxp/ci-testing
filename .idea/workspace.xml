@@ -22,13 +22,9 @@
           <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="852">
-                  <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
-                  <folding>
-                    <element signature="e#1703#2491#0" expanded="false" />
-                    <element signature="e#2495#3283#0" expanded="false" />
-                    <element signature="e#3287#3508#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="782">
+                  <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -278,7 +274,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517214979239</updated>
-      <workItem from="1517214981265" duration="6169000" />
+      <workItem from="1517214981265" duration="6314000" />
     </task>
     <task id="LOCAL-00001" summary="Added Circle CI file">
       <created>1517215825748</created>
@@ -371,11 +367,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517222337649</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Indentation">
+      <created>1517222422743</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1517222422743</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6169000" />
+    <option name="totallyTimeSpent" value="6314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1058" extended-state="0" />
@@ -533,13 +536,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
-          <folding>
-            <element signature="e#1703#2491#0" expanded="false" />
-            <element signature="e#2495#3283#0" expanded="false" />
-            <element signature="e#3287#3508#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="782">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
