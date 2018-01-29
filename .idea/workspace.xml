@@ -20,8 +20,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+            <state relative-caret-position="588">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,7 +192,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517214979239</updated>
-      <workItem from="1517214981265" duration="1512000" />
+      <workItem from="1517214981265" duration="2406000" />
     </task>
     <task id="LOCAL-00001" summary="Added Circle CI file">
       <created>1517215825748</created>
@@ -208,11 +208,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517216383336</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changed phpunit command">
+      <created>1517216503656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1517216503656</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1512000" />
+    <option name="totallyTimeSpent" value="2406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1058" extended-state="0" />
@@ -252,7 +259,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Added Circle CI file" />
     <MESSAGE value="Changed image to circleci:latest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed image to circleci:latest" />
+    <MESSAGE value="changed phpunit command" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed phpunit command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -333,8 +341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        <state relative-caret-position="588">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
