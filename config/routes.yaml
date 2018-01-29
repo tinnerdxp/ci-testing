@@ -1,3 +1,12 @@
 index:
-    path: /hello
-    controller: App\Controller\HelloController::indexAction
+  path: /index
+  controller: App\Controller\HelloController::indexAction
+hello:
+  path: /hello
+  controller: App\Controller\HelloController::helloAction
+foo:
+  path: /foo
+  controller: App\Controller\HelloController::fooAction
+bar:
+  path: /bar
+  controller: App\Controller\HelloController::barAction

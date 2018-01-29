@@ -6,36 +6,75 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/php:latest
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mysql:9.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run: sudo apt-get update
       - run: sudo apt-get install libzip-dev libwebp-dev libjpeg-dev libpng-dev libz-dev libxpm-dev libmcrypt-dev
       - run: sudo pecl channel-update pecl.php.net
       - run: sudo pecl install zip && sudo docker-php-ext-enable zip
       - run: composer install -n --prefer-dist
-
       - save_cache:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
+      - run: echo "BUILD COMPLETE"
 
-      # run tests!
+  test:
+    docker:
+      - image: circleci/php:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo apt-get update
+      - run: sudo apt-get install libzip-dev libwebp-dev libjpeg-dev libpng-dev libz-dev libxpm-dev libmcrypt-dev
+      - run: sudo pecl channel-update pecl.php.net
+      - run: sudo pecl install zip && sudo docker-php-ext-enable zip
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
       - run: bin/phpunit
+
+  deployment:
+    master:
+      branch: master
+      commands:
+        - echo "deploying master branch"
+        - ssh -v $DROPLET_USER@$DROPLET_IP "cd /srv; ./circle_deployer.sh"
+
+  workflows:
+    version: 2
+    build_test_and_deploy:
+      jobs:
+        - build
+        - run_unit_tests:
+          requires:
+            - build
+        - run_functional_tests:
+          requires:
+            - build
+        - run_acceptance_tests:
+          requires:
+            - build
+        - hold:
+          type: approval
+          requires:
+            - run_unit_tests
+            - run_functional_tests
+            - run_acceptance_tests
+        - deployment:
+          requires:
+            - hold

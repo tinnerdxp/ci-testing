@@ -12,4 +12,19 @@ class HelloController {
             '<html><body>Hello number: ' . $number . '</body></html>'
         );
     }
+    public function helloAction() {
+        return new Response(
+            '<html><body>Hello</body></html>'
+        );
+    }
+    public function fooAction() {
+        return new Response(
+            '<html><body>Foo</body></html>'
+        );
+    }
+    public function barAction() {
+        return new Response(
+            '<html><body>Bar</body></html>'
+        );
+    }
 }
