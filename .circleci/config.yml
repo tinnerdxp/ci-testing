@@ -111,14 +111,17 @@ workflows:
     jobs:
       - build
       - run_unit_tests:
+          requires:
+            - build
       - run_functional_tests:
+          requires:
+            - build
       - run_acceptance_tests:
+          requires:
+            - build
       - hold:
           type: approval
           requires:
             - run_unit_tests
             - run_functional_tests
             - run_acceptance_tests
-      - deployment:
-          requires:
-            - hold
