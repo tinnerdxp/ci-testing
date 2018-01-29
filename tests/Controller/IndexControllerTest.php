@@ -4,7 +4,7 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class HelloControllerTest extends WebTestCase {
+class IndexControllerTest extends WebTestCase {
     public function testShowPost() {
         $client = static::createClient();
         $client->request('GET', '/index');
