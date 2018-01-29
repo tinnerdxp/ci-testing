@@ -105,6 +105,15 @@ workflows:
   build_test_and_deploy:
     jobs:
       - build
+      - run_unit_tests:
+          requires:
+            - build
+      - run_functional_tests:
+          requires:
+            - build
+      - run_acceptance_tests:
+          requires:
+            - build
 
 #workflows:
 #  version: 2
